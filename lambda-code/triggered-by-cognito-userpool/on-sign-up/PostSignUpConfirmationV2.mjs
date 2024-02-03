@@ -46,6 +46,10 @@ export const handler = async (event) => {
                     'UserId': userId,
                     'AppName': appName,
                     'LikedItems': likedItems
+                },
+                ConditionExpression: 'attribute_not_exists(#UserId)',
+                ExpressionAttributeNames: {
+                    '#UserId': userId
                 }
             });
 
